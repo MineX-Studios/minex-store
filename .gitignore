@@ -1,0 +1,11 @@
+# Operating notes
+.DS_Store
+Thumbs.db
+
+# Screenshot / scratch output from design iterations
+_shots/
+*.tmp
+
+# Editor
+.vscode/
+.idea/

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Boosters — MineX Store</title>
+<meta name="description" content="Global shard boosters double the whole server's shard rate for an hour. Buy a pack, queue the hours, activate whenever.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div data-chrome-top></div>
+
+<main id="page">
+
+  <section class="page-head" style="--tint:#57D9EF">
+    <div class="inner">
+      <a class="back" href="index.html"><svg viewBox="0 0 24 24"><path d="M19 12H6M12.5 5.5L6 12l6.5 6.5"/></svg>Back to store</a>
+      <span class="kicker cy" style="margin-bottom:16px">Global ×2 · queued hours</span>
+      <h1 class="h-xl" style="font-size:clamp(38px,4.6vw,62px)">Boosters</h1>
+      <p class="lede" style="margin-top:14px">One booster lights up the entire server at double shard rate for a full hour. Buy them in packs, activate whenever, and nobody's hour is ever wasted.</p>
+    </div>
+  </section>
+
+  <nav class="subnav">
+    <div class="subnav-in">
+      <a href="#pack" class="on">The pack</a>
+      <a href="#how">How boosting works</a>
+      <a href="#math">What it's worth</a>
+      <a href="#faq">Questions</a>
+    </div>
+  </nav>
+
+  <!-- hero pack -->
+  <section class="sec wrap" id="pack" style="padding-top:52px">
+    <div class="feature rv" style="--tint:#57D9EF">
+      <div class="feature-body">
+        <span class="kicker cy">Launch offer</span>
+        <h2 class="h-lg">3 hours of ×2 for <span class="accent-grad">$1.</span></h2>
+        <p class="lede">
+          Three separate one-hour boosters, queued in your account. Activate one whenever the server is busy
+          and every player online — including you — earns double shards for that hour.
+        </p>
+        <div class="feature-price">
+          <span class="n">$1.00</span>
+          <span class="u">USD / pack of 3</span>
+          <s>$3.00</s>
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <button class="btn btn-primary" data-add='{"id":"booster-pack","name":"Shard Booster Pack","price":1,"was":3,"kind":"booster","sub":"3 × 1 hour · global ×2"}'>
+            Get the pack
+            <svg viewBox="0 0 24 24"><path d="M5 12h13M12.5 5.5L19 12l-6.5 6.5"/></svg>
+          </button>
+          <a class="btn btn-ghost" href="#how">How it works</a>
+        </div>
+        <div class="packfacts">
+          <div><b>3 ×</b><span>1-hour boosters</span></div>
+          <div><b>×2</b><span>Server-wide shards</span></div>
+          <div><b>0</b><span>Wasted hours</span></div>
+        </div>
+      </div>
+      <div class="feature-art">
+        <div class="boost-art"><canvas data-art="flask" data-size="380"></canvas><canvas class="plus" data-art="plusbadge" data-size="120"></canvas></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- value math -->
+  <section class="sec wrap" id="math">
+    <div class="sec-head rv">
+      <div>
+        <span class="idx">What it's worth</span>
+        <h2 class="h-lg">Roughly 600 extra shards an hour.</h2>
+        <p>Numbers below are a typical player's hourly shard income. Boosting doubles it for everyone online at the time — this is the part that actually pays for itself.</p>
+      </div>
+    </div>
+    <div class="mathgrid rv">
+      <div class="mathcard">
+        <span class="mlabel">Solo mining</span>
+        <div class="mvalue">280 <small>shards/hr</small></div>
+        <div class="mbar"><i style="width:40%"></i></div>
+        <p>Baseline passive income from a normal session.</p>
+      </div>
+      <div class="mathcard">
+        <span class="mlabel">With your booster</span>
+        <div class="mvalue accent">560 <small>shards/hr</small></div>
+        <div class="mbar"><i style="width:80%;background:var(--cyan)"></i></div>
+        <p>Double for the whole hour, plus the server's stack.</p>
+      </div>
+      <div class="mathcard">
+        <span class="mlabel">Whole server, that hour</span>
+        <div class="mvalue">34,000 <small>shards</small></div>
+        <div class="mbar"><i style="width:100%;background:var(--gold)"></i></div>
+        <p>About 100 players × 340 extra shards each. Goodwill included.</p>
+      </div>
+    </div>
+    <div class="notice rv">
+      <svg viewBox="0 0 24 24"><path d="M13 2.5L4.5 13.5H11l-1 8L19.5 10H13l1-7.5z"/></svg>
+      <div><b>Boosters stack with each other.</b> If two players activate at the same time, the hours queue instead of overlapping — the server is never double-boosted by accident, and no hour is lost.</div>
+    </div>
+  </section>
+
+  <!-- how it works -->
+  <section class="sec wrap" id="how">
+    <div class="sec-head rv">
+      <div>
+        <span class="idx">The mechanics</span>
+        <h2 class="h-lg">Buy, queue, light it up.</h2>
+      </div>
+    </div>
+    <div class="steps3">
+      <div class="stepcard rv">
+        <span class="stepnum">01</span>
+        <b>Buy the pack</b>
+        <p>Three hours land in your booster inventory immediately after the payment verifies. They never expire while they sit there.</p>
+      </div>
+      <div class="stepcard rv" data-delay="60">
+        <span class="stepnum">02</span>
+        <b>Activate when it's busy</b>
+        <p>Run <code>/booster</code> at peak hours and the server goes ×2 for sixty minutes. Everyone online shares it.</p>
+      </div>
+      <div class="stepcard rv" data-delay="120">
+        <span class="stepnum">03</span>
+        <b>Get thanked</b>
+        <p>Players can tip a booster with <code>/thanks</code>, which pays you bonus shards for lighting the place up.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- other packs -->
+  <section class="sec wrap">
+    <div class="sec-head rv">
+      <div>
+        <span class="idx">Bigger packs</span>
+        <h2 class="h-lg">If you boost a lot.</h2>
+        <p>Larger packs are cheaper per hour. All of them queue the same way and never expire.</p>
+      </div>
+    </div>
+    <div class="packgrid rv" id="packgrid"></div>
+  </section>
+
+  <section class="sec wrap" id="faq">
+    <div class="sec-head rv">
+      <div>
+        <span class="idx">Booster questions</span>
+        <h2 class="h-lg">Before you light it up.</h2>
+      </div>
+    </div>
+    <div class="faq rv">
+      <details open>
+        <summary><span class="q">01</span>Does a booster help only me or everyone?<span class="plus"></span></summary>
+        <div class="a">Everyone online while it runs. That's the point — the whole server's shard rate doubles, which is why players often pool boosters at peak times.</div>
+      </details>
+      <details>
+        <summary><span class="q">02</span>Do unused boosters expire?<span class="plus"></span></summary>
+        <div class="a">No. Boosters sit in your inventory indefinitely until you activate them. The only thing that expires is an hour, once it has started running.</div>
+      </details>
+      <details>
+        <summary><span class="q">03</span>What if the server restarts mid-boost?<span class="plus"></span></summary>
+        <div class="a">The remaining time is preserved and resumes when the server comes back. You don't lose hours to a restart or a crash.</div>
+      </details>
+      <details>
+        <summary><span class="q">04</span>Can two boosters run at once?<span class="plus"></span></summary>
+        <div class="a">They queue rather than stack to ×4. A second activation waits until the current hour finishes, so nothing overlaps and nothing is wasted.</div>
+      </details>
+      <details>
+        <summary><span class="q">05</span>What's the AFK zone bonus?<span class="plus"></span></summary>
+        <div class="a">Shard income in the AFK zone also doubles during a global booster, which is why some players park there during boosted hours.</div>
+      </details>
+    </div>
+  </section>
+
+</main>
+
+<div data-chrome-foot></div>
+
+<script src="assets/art.js"></script>
+<script src="assets/app.js"></script>
+<script>
+(function () {
+  MX.boot('boosters');
+
+  var packs = [
+    { id: 'booster-pack', name: 'Shard Booster Pack', hours: 3, price: 1, was: 3, note: '3 × 1 hour', tint: '#57D9EF', badge: 'Launch offer' },
+    { id: 'booster-pack-6', name: 'Shard Booster Pack ×2', hours: 6, price: 5, was: 6, note: '6 × 1 hour', tint: '#57D9EF', badge: null },
+    { id: 'booster-pack-12', name: 'Shard Booster Pack ×4', hours: 12, price: 9, was: 12, note: '12 × 1 hour', tint: '#57D9EF', badge: 'Best value' }
+  ];
+
+  document.getElementById('packgrid').innerHTML = packs.map(function (p, i) {
+    var sp = MX.splitPrice(p.price);
+    var per = (p.price / p.hours).toFixed(2);
+    return '<article class="packcard" style="--tint:' + p.tint + '" data-delay="' + (i * 60) + '">' +
+      (p.badge ? '<span class="prod-badge' + (p.badge === 'Best value' ? '' : ' cy') + '">' + p.badge + '</span>' : '') +
+      '<div class="packart"><canvas data-art="flask" data-size="220"></canvas></div>' +
+      '<div class="packbody">' +
+      '<div class="prod-eyeb">' + p.note + '</div>' +
+      '<h3>' + p.name + '</h3>' +
+      '<div class="price-row">' +
+      '<div class="price"><span class="cur">$</span><span class="num">' + sp.whole + '</span><span class="dec">.' + sp.dec + '</span></div>' +
+      '<div class="price-note">$' + per + ' / hour' + (p.was > p.price ? '<br><s>$' + (p.was / p.hours).toFixed(2) + '</s>' : '') + '</div>' +
+      '</div>' +
+      '<div class="prod-actions"><button class="btn btn-primary" data-add=\'' + JSON.stringify({ id: p.id, name: p.name, price: p.price, was: p.was, kind: 'booster', sub: p.note + ' · global ×2' }) + '\'>Add pack</button></div>' +
+      '</div></article>';
+  }).join('');
+
+  /* subnav */
+  var secs = ['pack', 'how', 'math', 'faq'];
+  window.addEventListener('scroll', function () {
+    var y = window.scrollY + 140, cur = 'pack';
+    secs.forEach(function (id) { var el = document.getElementById(id); if (el && el.offsetTop <= y) cur = id; });
+    MX.els('.subnav a').forEach(function (a) { a.classList.toggle('on', a.getAttribute('href') === '#' + cur); });
+  }, { passive: true });
+
+  MX.mountArt();
+  MX.initReveal();
+})();
+</script>
+</body>
+</html>

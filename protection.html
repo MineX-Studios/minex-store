@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Protection — MineX Store</title>
+<meta name="description" content="Protection blocks claim a full 3D cube around them. Listed by players, priced at the cheapest live listing, and retrievable later.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div data-chrome-top></div>
+
+<main id="page">
+
+  <section class="page-head" style="--tint:#4F9CF0">
+    <div class="inner">
+      <a class="back" href="index.html"><svg viewBox="0 0 24 24"><path d="M19 12H6M12.5 5.5L6 12l6.5 6.5"/></svg>Back to store</a>
+      <span class="kicker" style="margin-bottom:16px">Player-listed · retrievable</span>
+      <h1 class="h-xl" style="font-size:clamp(38px,4.6vw,62px)">Protection</h1>
+      <p class="lede" style="margin-top:14px">One block claims a full cube around it — 25, 49, 97 or 193 blocks on a side. Blocks are owned by players, so the price you pay is the cheapest live listing.</p>
+    </div>
+  </section>
+
+  <nav class="subnav">
+    <div class="subnav-in">
+      <a href="#tiers" class="on">The four tiers</a>
+      <a href="#how">How claims work</a>
+      <a href="#listings">Live listings</a>
+      <a href="#faq">Questions</a>
+    </div>
+  </nav>
+
+  <section class="sec wrap" id="tiers" style="padding-top:52px">
+    <div class="sec-head rv">
+      <div>
+        <span class="idx">Pick a size</span>
+        <h2 class="h-lg">Four sizes, one block.</h2>
+        <p>Place the block and the cube around it becomes yours. Bigger tiers unlock sub-flags and protection from more kinds of grief.</p>
+      </div>
+    </div>
+    <div class="land-grid" id="grid"></div>
+    <div class="ladder-foot">
+      <span>Prices are the cheapest live player listing at the time of page load.</span>
+      <span class="sep"></span>
+      <span>Sellers receive 70% of every sale.</span>
+    </div>
+  </section>
+
+  <!-- cube comparison -->
+  <section class="sec wrap">
+    <div class="sec-head rv">
+      <div>
+        <span class="idx">Scale</span>
+        <h2 class="h-lg">How big is the cube, really?</h2>
+        <p>The number is the length of one side. A Block II claim is 49 blocks across in every direction — roughly a five-chunk square.</p>
+      </div>
+    </div>
+    <div class="cubes rv" id="cubes"></div>
+  </section>
+
+  <section class="sec wrap" id="how">
+    <div class="sec-head rv">
+      <div>
+        <span class="idx">How claims work</span>
+        <h2 class="h-lg">Place it, trust who you want.</h2>
+      </div>
+    </div>
+    <div class="steps3">
+      <div class="stepcard rv">
+        <span class="stepnum">01</span>
+        <b>Place the block</b>
+        <p>Set it down where you want the middle of your claim. Everything inside the cube becomes protected immediately.</p>
+      </div>
+      <div class="stepcard rv" data-delay="60">
+        <span class="stepnum">02</span>
+        <b>Trust your people</b>
+        <p>Add players to the trust list so they can build, open containers and use doors. Everyone else is blocked by default.</p>
+      </div>
+      <div class="stepcard rv" data-delay="120">
+        <span class="stepnum">03</span>
+        <b>Retrieve it later</b>
+        <p>Break the block with <code>/fo retrieve</code> and it goes back to your inventory — the claim moves with it. Nothing is consumed.</p>
+      </div>
+    </div>
+    <div class="notice rv">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1"/></svg>
+      <div><b>No listing? Earn one in-game.</b> Protection blocks are also available for in-game currency at <code style="font-family:var(--font-mono);background:var(--surf-3);border:1px solid var(--line);border-radius:2px;padding:1px 5px">/protectionshop</code>. The store is just the faster, player-priced route.</div>
+    </div>
+  </section>
+
+  <!-- tier matrix -->
+  <section class="sec wrap">
+    <div class="sec-head rv">
+      <div>
+        <span class="idx">Feature matrix</span>
+        <h2 class="h-lg">What each tier unlocks.</h2>
+      </div>
+    </div>
+    <div class="compare rv" id="matrix"></div>
+  </section>
+
+  <section class="sec wrap" id="listings">
+    <div class="sec-head rv">
+      <div>
+        <span class="idx">Live listings</span>
+        <h2 class="h-lg">Cheapest blocks right now.</h2>
+        <p>Every listing below is player-owned stock. Buying one transfers the block and pays the seller 70%.</p>
+      </div>
+    </div>
+    <div class="listing-board rv" id="listingsEl"></div>
+  </section>
+
+  <section class="sec wrap" id="faq">
+    <div class="sec-head rv">
+      <div>
+        <span class="idx">Claim questions</span>
+        <h2 class="h-lg">Before you claim.</h2>
+      </div>
+    </div>
+    <div class="faq rv">
+      <details open>
+        <summary><span class="q">01</span>What exactly does "49³" mean?<span class="plus"></span></summary>
+        <div class="a">It's the length of one side of the protected cube, measured in blocks. A Block II claim extends 24 blocks in every direction from the protection block, for 49 blocks across in total.</div>
+      </details>
+      <details>
+        <summary><span class="q">02</span>Can I move my claim?<span class="plus"></span></summary>
+        <div class="a">Yes. Break the protection block with <code>/fo retrieve</code> and it returns to your inventory. Place it somewhere else and the cube moves with it — the block itself is never used up.</div>
+      </details>
+      <details>
+        <summary><span class="q">03</span>What happens if I overlap someone else's claim?<span class="plus"></span></summary>
+        <div class="a">The server refuses to place a block that would overlap an existing claim. You'll get an error and the block stays in your inventory, so nothing is wasted.</div>
+      </details>
+      <details>
+        <summary><span class="q">04</span>Why is the store price different from /protectionshop?<span class="plus"></span></summary>
+        <div class="a">The store sells player listings, so prices float with supply — sometimes cheaper than the in-game shop, sometimes not. Both routes give you the same block.</div>
+      </details>
+      <details>
+        <summary><span class="q">05</span>Do I keep the block if I stop playing?<span class="plus"></span></summary>
+        <div class="a">Yes. Claims persist indefinitely and are tied to your account. If you want to hand a base to a friend, add them to the trust list or transfer the block by breaking and trading it.</div>
+      </details>
+      <details>
+        <summary><span class="q">06</span>How does selling work?<span class="plus"></span></summary>
+        <div class="a">List a protection block you own from the in-game market menu. When it sells, you receive 70% of the price and the block transfers to the buyer.</div>
+      </details>
+    </div>
+  </section>
+
+</main>
+
+<div data-chrome-foot></div>
+
+<script src="assets/art.js"></script>
+<script src="assets/app.js"></script>
+<script>
+(function () {
+  MX.boot('protection');
+  var C = MX.CATALOG;
+
+  /* ---- tier cards ---- */
+  document.getElementById('grid').innerHTML = C.land.map(function (l, i) {
+    var sp = MX.splitPrice(l.price);
+    return '<article class="prod rv" style="--tint:' + l.tint + '" data-delay="' + (i * 55) + '">' +
+      '<span class="prod-tier">' + l.tier + '</span>' +
+      '<div class="prod-art"><canvas data-art="land" data-size="360" data-spec=\'' + JSON.stringify(l.art) + '\'></canvas></div>' +
+      '<div class="prod-body">' +
+      '<div class="prod-eyeb">' + l.tag + ' · ' + l.size + '³ blocks</div>' +
+      '<h3>' + l.name + '</h3>' +
+      '<p class="desc">' + l.blurb + '</p>' +
+      '<ul class="perks">' + l.perks.map(function (p) { return '<li>' + p + '</li>'; }).join('') + '</ul>' +
+      '<div class="prod-foot">' +
+      '<div class="price-row"><div class="price"><span class="cur">$</span><span class="num">' + sp.whole + '</span><span class="dec">.' + sp.dec + '</span></div>' +
+      '<div class="price-note">cheapest listing</div></div>' +
+      '<div class="prod-actions"><button class="btn btn-primary" data-add=\'' + JSON.stringify({ id: 'land:' + l.id, name: l.name, price: l.price, kind: 'land', spec: l.art, sub: 'Player listing · seller gets 70%' }) + '\'>Add to basket</button></div>' +
+      '</div></div></article>';
+  }).join('');
+
+  /* ---- scale comparison ---- */
+  document.getElementById('cubes').innerHTML = C.land.map(function (l) {
+    // area scales with size^2; normalise so Capital fills the bar
+    var pct = Math.pow(l.size / 193, 2) * 100;
+    return '<div class="cuberow">' +
+      '<div class="cubelbl"><b>' + l.tag + '</b><span>' + l.size + ' × ' + l.size + ' × ' + l.size + '</span></div>' +
+      '<div class="cubebar"><i style="width:' + Math.max(3, pct) + '%;background:' + l.tint + '"></i></div>' +
+      '<div class="cubevol">' + (l.size * l.size * l.size).toLocaleString() + ' blocks</div>' +
+      '</div>';
+  }).join('');
+
+  /* ---- feature matrix ---- */
+  var rows = [
+    ['Cube side', ['25', '49', '97', '193']],
+    ['Anti-grief', ['<span class="yes">✓</span>', '<span class="yes">✓</span>', '<span class="yes">✓</span>', '<span class="yes">✓</span>']],
+    ['PvP disabled inside', ['<span class="yes">✓</span>', '<span class="yes">✓</span>', '<span class="yes">✓</span>', '<span class="yes">✓</span>']],
+    ['Trust list', ['<span class="yes">✓</span>', '<span class="yes">✓</span>', '<span class="yes">✓</span>', '<span class="yes">✓</span>']],
+    ['Container access control', ['<span class="no">—</span>', '<span class="yes">✓</span>', '<span class="yes">✓</span>', '<span class="yes">✓</span>']],
+    ['Sub-flags', ['<span class="no">—</span>', '<span class="no">—</span>', '<span class="yes">✓</span>', '<span class="yes">✓</span>']],
+    ['PvE toggle', ['<span class="no">—</span>', '<span class="no">—</span>', '<span class="yes">✓</span>', '<span class="yes">✓</span>']],
+    ['Full flag control', ['<span class="no">—</span>', '<span class="no">—</span>', '<span class="no">—</span>', '<span class="yes">✓</span>']],
+    ['Resale (seller keeps 70%)', ['<span class="yes">✓</span>', '<span class="yes">✓</span>', '<span class="yes">✓</span>', '<span class="yes">✓</span>']]
+  ];
+  var thead = '<thead><tr><th style="min-width:170px">Feature</th>' + C.land.map(function (l) {
+    return '<th><span class="rk-name" style="color:' + l.tint + '">' + l.tag + '</span><span class="rk-price">$' + l.price.toFixed(2) + '</span></th>';
+  }).join('') + '</tr></thead>';
+  var tbody = '<tbody>' + rows.map(function (r) {
+    return '<tr><td>' + r[0] + '</td>' + r[1].map(function (v) { return '<td class="v">' + v + '</td>'; }).join('') + '</tr>';
+  }).join('') + '</tbody>';
+  var tfoot = '<tfoot><tr><td></td>' + C.land.map(function (l) {
+    return '<td><button class="btn btn-primary btn-sm" data-add=\'' + JSON.stringify({ id: 'land:' + l.id, name: l.name, price: l.price, kind: 'land', spec: l.art, sub: 'Player listing · seller gets 70%' }) + '\'>Buy</button></td>';
+  }).join('') + '</tr></tfoot>';
+  document.getElementById('matrix').innerHTML = '<table>' + thead + tbody + tfoot + '</table>';
+
+  /* ---- listings ---- */
+  var listings = [
+    { tier: 'Protection I', tag: 'Outpost', seller: 'chrisp0901', stock: 3, price: 4.20, tint: '#7BA05B' },
+    { tier: 'Protection I', tag: 'Outpost', seller: 'Johanzen', stock: 1, price: 4.60, tint: '#7BA05B' },
+    { tier: 'Protection II', tag: 'Hamlet', seller: 'MillyOnSnuffy', stock: 2, price: 9.80, tint: '#4F9CF0' },
+    { tier: 'Protection II', tag: 'Hamlet', seller: 'zellixo_', stock: 1, price: 10.50, tint: '#4F9CF0' },
+    { tier: 'Protection III', tag: 'Town', seller: 'MarcoElFenix', stock: 1, price: 18.50, tint: '#A78BFA' },
+    { tier: 'Protection III', tag: 'Town', seller: 'HIddan_kalled', stock: 2, price: 19.90, tint: '#A78BFA' },
+    { tier: 'Protection IV', tag: 'Capital', seller: 'Johanzen', stock: 1, price: 34.00, tint: '#F1C34C' }
+  ];
+  document.getElementById('listingsEl').innerHTML = listings.map(function (l) {
+    return '<div class="lrow">' +
+      '<span class="lsw" style="background:' + l.tint + '"></span>' +
+      '<div class="lwho"><b>' + l.tier + ' · ' + l.tag + '</b><span>' + l.seller + '</span></div>' +
+      '<div class="lstock"><b>' + l.stock + '</b> in stock</div>' +
+      '<div class="lprice">$' + l.price.toFixed(2) + '</div>' +
+      '<button class="btn btn-ghost btn-sm" data-add=\'' + JSON.stringify({ id: 'list-' + l.seller + '-' + l.tag, name: l.tier + ' · ' + l.seller, price: l.price, kind: 'land', sub: 'Player listing · 70% to seller' }) + '\'>Buy</button>' +
+      '</div>';
+  }).join('');
+
+  /* subnav */
+  var secs = ['tiers', 'how', 'listings', 'faq'];
+  window.addEventListener('scroll', function () {
+    var y = window.scrollY + 140, cur = 'tiers';
+    secs.forEach(function (id) { var el = document.getElementById(id); if (el && el.offsetTop <= y) cur = id; });
+    MX.els('.subnav a').forEach(function (a) { a.classList.toggle('on', a.getAttribute('href') === '#' + cur); });
+  }, { passive: true });
+
+  MX.mountArt();
+  MX.initReveal();
+})();
+</script>
+</body>
+</html>

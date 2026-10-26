@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Crates — MineX Store</title>
+<meta name="description" content="Six MineX crate tiers with every reward and its exact drop chance published before you buy. Keys open at spawn.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div data-chrome-top></div>
+
+<main id="page">
+
+  <section class="page-head" style="--tint:#F0687E">
+    <div class="inner">
+      <a class="back" href="index.html"><svg viewBox="0 0 24 24"><path d="M19 12H6M12.5 5.5L6 12l6.5 6.5"/></svg>Back to store</a>
+      <span class="kicker" style="margin-bottom:16px">Six tiers · opens at spawn</span>
+      <h1 class="h-xl" style="font-size:clamp(38px,4.6vw,62px)">Crates</h1>
+      <p class="lede" style="margin-top:14px">Every crate publishes its complete reward pool and the real percentage for each item — before you spend anything. No hidden filler tiers, no weighted mystery.</p>
+    </div>
+  </section>
+
+  <nav class="subnav">
+    <div class="subnav-in">
+      <a href="#all" class="on">All crates</a>
+      <a href="#how">How keys work</a>
+      <a href="#listings">Player listings</a>
+      <a href="#faq">Questions</a>
+    </div>
+  </nav>
+
+  <section class="sec wrap" id="all" style="padding-top:52px">
+    <div class="sec-head rv">
+      <div>
+        <span class="idx">Pick a tier</span>
+        <h2 class="h-lg">From a starter key to endgame.</h2>
+        <p>Each card shows the guaranteed drop plus the headline bonus. Open the full pool to see every single reward and its odds.</p>
+      </div>
+    </div>
+    <div class="crates-grid" id="grid"></div>
+  </section>
+
+  <section class="sec wrap" id="how">
+    <div class="sec-head rv">
+      <div>
+        <span class="idx">How it works</span>
+        <h2 class="h-lg">Buy a key, open it at spawn.</h2>
+      </div>
+    </div>
+    <div class="steps3">
+      <div class="stepcard rv">
+        <span class="stepnum">01</span>
+        <b>Buy the key</b>
+        <p>The key is delivered to your player automatically once payment verifies. No ticket, no waiting for staff.</p>
+      </div>
+      <div class="stepcard rv" data-delay="60">
+        <span class="stepnum">02</span>
+        <b>Open it at spawn</b>
+        <p>Walk to the crate of the matching tier at spawn and right-click with the key in hand. The roll happens server-side.</p>
+      </div>
+      <div class="stepcard rv" data-delay="120">
+        <span class="stepnum">03</span>
+        <b>Keep or trade it</b>
+        <p>Most gear is tradeable. Skinned and named items carry their own history, which you can check on the item explorer.</p>
+      </div>
+    </div>
+    <div class="notice rv">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1"/></svg>
+      <div><b>Odds are published, not estimated.</b> Every percentage on this page is read from the same configuration the server rolls against. If a pool changes, these numbers change with it.</div>
+    </div>
+  </section>
+
+  <section class="sec wrap" id="listings">
+    <div class="sec-head rv">
+      <div>
+        <span class="idx">Player market</span>
+        <h2 class="h-lg">Keys listed by players.</h2>
+        <p>Players can list spare keys for sale. When you buy a listing, the seller receives 70% and the key transfers to you instantly.</p>
+      </div>
+      <div class="side"><a class="btn btn-ghost btn-sm" href="https://scan.minex.gg/market" target="_blank" rel="noopener">Full marketplace <svg viewBox="0 0 24 24"><path d="M5 12h13M12.5 5.5L19 12l-6.5 6.5"/></svg></a></div>
+    </div>
+    <div class="listing-board rv" id="listingsEl"></div>
+  </section>
+
+  <section class="sec wrap" id="faq">
+    <div class="sec-head rv">
+      <div>
+        <span class="idx">Crate questions</span>
+        <h2 class="h-lg">Before you open one.</h2>
+      </div>
+    </div>
+    <div class="faq rv">
+      <details open>
+        <summary><span class="q">01</span>Are the odds really published?<span class="plus"></span></summary>
+        <div class="a">Yes. Every crate page lists the full pool with a percentage per item. These are the actual roll weights from the server configuration, not marketing estimates.</div>
+      </details>
+      <details>
+        <summary><span class="q">02</span>Do I need the key in my inventory to open?<span class="plus"></span></summary>
+        <div class="a">The key is delivered to your player. If your inventory is full it stays in the delivery queue and is handed over as soon as you have space — it is never lost.</div>
+      </details>
+      <details>
+        <summary><span class="q">03</span>Are crate rewards tradeable?<span class="plus"></span></summary>
+        <div class="a">Most gear drops are fully tradeable, and skinned variants keep their own ownership history. A few cosmetics are bound to the account that opened them, and those are marked on the reward list.</div>
+      </details>
+      <details>
+        <summary><span class="q">04</span>What happens to duplicate rewards?<span class="plus"></span></summary>
+        <div class="a">Duplicates are yours to keep, trade, or salvage for shards. Nothing is silently converted or discarded.</div>
+      </details>
+      <details>
+        <summary><span class="q">05</span>Can I buy keys as a gift?<span class="plus"></span></summary>
+        <div class="a">Enter the recipient's Minecraft name at checkout instead of your own. Delivery goes to whoever is named there, so double-check the spelling.</div>
+      </details>
+    </div>
+  </section>
+
+</main>
+
+<div data-chrome-foot></div>
+
+<script src="assets/art.js"></script>
+<script src="assets/app.js"></script>
+<script>
+(function () {
+  MX.boot('crates');
+  var C = MX.CATALOG;
+
+  /* ---------------- crate grid ---------------- */
+  document.getElementById('grid').innerHTML = C.crates.map(function (c, i) {
+    var sp = MX.splitPrice(c.price);
+    var top = c.odds[0];
+    return '<article class="prod rv" style="--tint:' + c.tint + '" data-delay="' + (i * 55) + '">' +
+      (c.id === 'mythic' ? '<span class="prod-badge cy">Endgame</span>' :
+        c.id === 'legendary' ? '<span class="prod-badge">Popular</span>' : '') +
+      '<span class="prod-tier">' + c.tier + '</span>' +
+      '<div class="prod-art"><canvas data-art="crate" data-size="360" data-spec=\'' + JSON.stringify(c.art) + '\'></canvas></div>' +
+      '<div class="prod-body">' +
+      '<div class="prod-eyeb">' + c.tier + ' · crate key</div>' +
+      '<h3>' + c.name + '</h3>' +
+      '<p class="desc">' + c.blurb + '</p>' +
+      '<div class="odds-strip">' +
+      c.odds.slice(0, 3).map(function (o, oi) {
+        return '<div class="o' + (oi === 0 ? ' hot' : '') + '"><b>' + o[1] + '%</b><span>' + o[0].replace(/ ×\d+$/, '') + '</span></div>';
+      }).join('') +
+      '</div>' +
+      '<div class="prod-foot">' +
+      '<div class="price-row">' +
+      '<div class="price"><span class="cur">$</span><span class="num">' + sp.whole + '</span><span class="dec">.' + sp.dec + '</span></div>' +
+      '<div class="price-note">per key</div></div>' +
+      '<div class="prod-actions">' +
+      '<button class="btn btn-ghost btn-sm" data-pool="' + c.id + '">Full pool</button>' +
+      '<button class="btn btn-primary" data-add=\'' + JSON.stringify({ id: 'crate:' + c.id, name: c.name, price: c.price, kind: 'crate', spec: c.art, sub: 'Crate key · opens at spawn' }) + '\'>Add key</button>' +
+      '</div></div></div></article>';
+  }).join('');
+
+  /* ---------------- listings ---------------- */
+  var listings = [
+    { key: 'Spawner Key', seller: 'zellixo_', stock: 14, price: 1.99, tier: '#9AA6BA' },
+    { key: 'Spawner Key', seller: 'MarcoElFenix', stock: 6, price: 2.10, tier: '#9AA6BA' },
+    { key: 'Common Key', seller: 'chrisp0901', stock: 9, price: 2.99, tier: '#7BA05B' },
+    { key: 'Rare Key', seller: 'MillyOnSnuffy', stock: 5, price: 5.99, tier: '#4F9CF0' },
+    { key: 'Epic Key', seller: 'zellixo_', stock: 3, price: 10.99, tier: '#A78BFA' },
+    { key: 'Legendary Key', seller: 'MarcoElFenix', stock: 2, price: 27.99, tier: '#F1C34C' },
+    { key: 'Mythic Key', seller: 'HIddan_kalled', stock: 2, price: 34.99, tier: '#F0687E' },
+    { key: 'Mythic Key', seller: 'Johanzen', stock: 1, price: 36.00, tier: '#F0687E' }
+  ];
+  document.getElementById('listingsEl').innerHTML = listings.map(function (l) {
+    return '<div class="lrow">' +
+      '<span class="lsw" style="background:' + l.tier + '"></span>' +
+      '<div class="lwho"><b>' + l.key + '</b><span>' + l.seller + '</span></div>' +
+      '<div class="lstock"><b>' + l.stock + '</b> in stock</div>' +
+      '<div class="lprice">$' + l.price.toFixed(2) + '</div>' +
+      '<button class="btn btn-ghost btn-sm" data-add=\'' + JSON.stringify({ id: 'list-' + l.seller + '-' + l.key, name: l.key + ' · ' + l.seller, price: l.price, kind: 'crate', sub: 'Player listing · 70% to seller' }) + '\'>Buy</button>' +
+      '</div>';
+  }).join('');
+
+  /* ---------------- pool modal ---------------- */
+  var modal = document.createElement('div');
+  modal.className = 'modal';
+  modal.innerHTML = '<div class="modal-card"><button class="modal-close" data-close-modal aria-label="Close">' +
+    '<svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>' +
+    '<div class="modal-grid"><div class="modal-art"><canvas data-art="crate" data-size="380"></canvas></div>' +
+    '<div class="modal-body">' +
+    '<span class="kicker" style="margin-bottom:12px" data-m-kick></span>' +
+    '<h3 class="h-md" style="margin-bottom:10px" data-m-title></h3>' +
+    '<p class="lede" style="font-size:13px;margin-bottom:18px" data-m-desc></p>' +
+    '<div class="pool open" style="margin-top:0"><div class="pool-head"><b>Full reward pool</b><span>server-verified odds</span></div>' +
+    '<div class="pool-list" data-m-pool></div></div>' +
+    '<button class="btn btn-primary btn-block" style="margin-top:18px" data-m-add>Add key to basket</button>' +
+    '</div></div></div>';
+  document.body.appendChild(modal);
+  var scrim = document.createElement('div');
+  scrim.className = 'scrim';
+  scrim.setAttribute('data-modal-scrim', '');
+  document.body.insertBefore(scrim, modal);
+
+  function openPool(id) {
+    var c = C.crates.filter(function (x) { return x.id === id; })[0];
+    if (!c) return;
+    MX.el('[data-m-kick]', modal).textContent = c.tier + ' crate key';
+    MX.el('[data-m-title]', modal).textContent = c.name;
+    MX.el('[data-m-desc]', modal).textContent = c.blurb;
+    var cv = MX.el('.modal-art canvas', modal);
+    cv.removeAttribute('data-done');
+    cv.setAttribute('data-spec', JSON.stringify(c.art));
+    MX.mountArt(modal);
+    MX.el('[data-m-pool]', modal).innerHTML = c.odds.map(function (o) {
+      var rare = o[2] > 0.25;
+      return '<div class="pool-row' + (rare ? ' rare' : '') + '">' +
+        '<span class="sw" style="background:' + (rare ? c.glow : c.tint) + '"></span>' +
+        '<span class="nm">' + o[0] + '</span>' +
+        '<span class="bar"><i style="width:' + Math.max(3, o[1]) + '%;background:' + (rare ? c.glow : c.tint) + '"></i></span>' +
+        '<span class="pct">' + o[1] + '%</span></div>';
+    }).join('');
+    MX.el('[data-m-add]', modal).setAttribute('data-add', JSON.stringify({
+      id: 'crate:' + c.id, name: c.name, price: c.price, kind: 'crate', spec: c.art, sub: 'Crate key · opens at spawn'
+    }));
+    modal.classList.add('on');
+    scrim.classList.add('on');
+    document.body.style.overflow = 'hidden';
+  }
+  function closePool() {
+    modal.classList.remove('on');
+    scrim.classList.remove('on');
+    if (!MX.el('[data-drawer]').classList.contains('on')) document.body.style.overflow = '';
+  }
+  document.addEventListener('click', function (e) {
+    var r = e.target.closest('[data-pool]');
+    if (r) { openPool(r.getAttribute('data-pool')); return; }
+    if (e.target.closest('[data-close-modal]') || e.target.closest('[data-modal-scrim]')) closePool();
+  });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closePool(); });
+
+  /* subnav */
+  var secs = ['all', 'how', 'listings', 'faq'];
+  window.addEventListener('scroll', function () {
+    var y = window.scrollY + 140, cur = 'all';
+    secs.forEach(function (id) { var el = document.getElementById(id); if (el && el.offsetTop <= y) cur = id; });
+    MX.els('.subnav a').forEach(function (a) { a.classList.toggle('on', a.getAttribute('href') === '#' + cur); });
+  }, { passive: true });
+
+  MX.mountArt();
+  MX.initReveal();
+})();
+</script>
+</body>
+</html>

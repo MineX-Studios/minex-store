@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MineX Store — Ranks, Crate Keys &amp; Protected Land</title>
+<meta name="description" content="The official MineX store. Permanent ranks, previewable crate keys, player-traded protection blocks and global shard boosters. Instant delivery to your player.">
+<meta name="theme-color" content="#07090D">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<div data-chrome-top></div>
+
+<main id="page">
+
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <div class="hero-scene"><img class="night" src="assets/img/spawn-night.png" alt="" fetchpriority="high"><img class="day" src="assets/img/spawn-day.png" alt=""></div>
+    <div class="hero-in">
+      <div class="hero-copy">
+        <span class="kicker">Official server store</span>
+
+        <h1 class="h-xl">
+          Everything you
+          <em class="accent-grad">earn, keep.</em>
+        </h1>
+
+        <div class="hero-split">
+          <p class="lede">
+            Ranks that never expire. Crate keys with every reward and its odds
+            printed before you pay. Land you actually own, and can resell.
+          </p>
+          <div class="hero-cue">
+            <span class="cue-num">play.minex.gg</span>
+            <span class="cue-lbl">Java &amp; Bedrock · instant delivery</span>
+          </div>
+        </div>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="ranks.html">
+            Browse ranks
+            <svg viewBox="0 0 24 24"><path d="M5 12h13M12.5 5.5L19 12l-6.5 6.5"/></svg>
+          </a>
+          <a class="btn btn-ghost" href="#crates">
+            Preview crate rewards
+            <svg viewBox="0 0 24 24"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="2.6"/></svg>
+          </a>
+        </div>
+
+        <div class="hero-facts">
+          <div class="f"><b>Instant</b><span>Delivery</span></div>
+          <div class="f"><b>Card</b><span>Secure</span></div>
+          <div class="f"><b>Forever</b><span>Ranks</span></div>
+          <div class="f"><b>Verified</b><span>Server-side</span></div>
+        </div>
+      </div>
+
+      <div class="stage" data-stage aria-hidden="true">
+        <div class="stage-glow"></div>
+        <div class="stage-ring"></div>
+        <div class="stage-ring r2"></div>
+
+        <!-- Each object carries its own price tag, so a label can never end up
+             next to the wrong item. -->
+        <div class="stage-item back-l">
+          <canvas data-art="crate" data-size="300" data-spec='{"style":"iron"}'></canvas>
+          <span class="obj-tag"><b>Crate keys</b><i>$1.99</i></span>
+        </div>
+
+        <div class="stage-item main">
+          <canvas data-art="rank" data-size="300" data-spec='{"id":"emperor"}'></canvas>
+          <span class="obj-tag"><b>Emperor</b><i>$37.50</i></span>
+        </div>
+
+        <div class="stage-item back-r">
+          <canvas data-art="flask" data-size="300" data-spec='{}'></canvas>
+          <span class="obj-tag"><b>Boosters</b><i>$1.00</i></span>
+        </div>
+
+        <span class="stage-tag">Hand-built voxel art · no stock renders</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= TICKER ================= -->
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track" id="ticker"></div>
+  </div>
+
+  <!-- ================= CATEGORIES ================= -->
+  <section class="sec wrap">
+    <div class="sec-head rv">
+      <div>
+        <span class="idx">01 — Browse</span>
+        <h2 class="h-lg">Four shelves. No digging.</h2>
+        <p>Each category is one page with real prices, real rewards and real listings. Nothing is hidden behind a click.</p>
+      </div>
+    </div>
+
+    <div class="cats">
+      <a class="cat rv" href="ranks.html" style="--tint:#F1C34C" data-delay="0">
+        <span class="cat-line"></span>
+        <span class="cat-num">01</span>
+        <span class="cat-art"><canvas data-art="rank" data-size="280" data-spec='{"id":"emperor"}'></canvas></span>
+        <h3>Ranks</h3>
+        <span class="from">Squire → Emperor · from $5</span>
+        <span class="go">View ranks <svg viewBox="0 0 24 24"><path d="M5 12h13M12.5 5.5L19 12l-6.5 6.5"/></svg></span>
+      </a>
+
+      <a class="cat rv" href="crates.html" style="--tint:#F0687E" data-delay="60">
+        <span class="cat-line"></span>
+        <span class="cat-num">02</span>
+        <span class="cat-art"><canvas data-art="crate" data-size="300" data-spec='{"style":"obsidian"}'></canvas></span>
+        <h3>Crates</h3>
+        <span class="from">Six tiers · from $1.99</span>
+        <span class="go">View crates <svg viewBox="0 0 24 24"><path d="M5 12h13M12.5 5.5L19 12l-6.5 6.5"/></svg></span>
+      </a>
+
+      <a class="cat rv" href="protection.html" style="--tint:#4F9CF0" data-delay="120">
+        <span class="cat-line"></span>
+        <span class="cat-num">03</span>
+        <span class="cat-art"><canvas data-art="land" data-size="300" data-spec='{"a":"#6d4a26","b":"#3f7fc0","emblem":"#d8f0ff","core":"#4fb8ff"}'></canvas></span>
+        <h3>Protection</h3>
+        <span class="from">Live player listings · from $2</span>
+        <span class="go">View blocks <svg viewBox="0 0 24 24"><path d="M5 12h13M12.5 5.5L19 12l-6.5 6.5"/></svg></span>
+      </a>
+
+      <a class="cat rv" href="boosters.html" style="--tint:#57D9EF" data-delay="180">
+        <span class="cat-line"></span>
+        <span class="cat-num">04</span>
+        <span class="cat-art"><canvas data-art="flask" data-size="300" data-spec='{}'></canvas></span>
+        <h3>Boosters</h3>
+        <span class="from">Global ×2 shards · from $1</span>
+        <span class="go">View boosters <svg viewBox="0 0 24 24"><path d="M5 12h13M12.5 5.5L19 12l-6.5 6.5"/></svg></span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ================= BEST SELLERS ================= -->
+  <section class="sec wrap" id="popular">
+    <div class="sec-head rv">
+      <div>
+        <span class="idx">02 — Most bought</span>
+        <h2 class="h-lg">What players actually buy.</h2>
+        <p>Live purchase order from the last 30 days. Prices are final and include delivery.</p>
+      </div>
+      <div class="side">
+        <a class="btn btn-ghost btn-sm" href="ranks.html">All ranks <svg viewBox="0 0 24 24"><path d="M5 12h13M12.5 5.5L19 12l-6.5 6.5"/></svg></a>
+      </div>
+    </div>
+
+    <div class="grid4" id="bestsellers"></div>
+  </section>
+
+  <!-- ================= RANK LADDER ================= -->
+  <section class="sec wrap" id="ranks">
+    <div class="sec-head rv">
+      <div>
+        <span class="idx">03 — The ladder</span>
+        <h2 class="h-lg">Five ranks. Buy the one you want.</h2>
+        <p>Higher tiers include everything below them — you never need to buy up. Every rank is permanent and stays on your account.</p>
+      </div>
+      <div class="side">
+        <a class="btn btn-ghost btn-sm" href="ranks.html">Compare all perks <svg viewBox="0 0 24 24"><path d="M5 12h13M12.5 5.5L19 12l-6.5 6.5"/></svg></a>
+      </div>
+    </div>
+
+    <div class="ladder" id="ladder"></div>
+
+    <div class="ladder-foot rv">
+      <span>King and Emperor can split into 4 weekly payments.</span>
+      <span class="sep"></span>
+      <span>Delivery starts after server-side payment verification.</span>
+      <span class="sep"></span>
+      <a href="ranks.html#compare">Full perk comparison →</a>
+    </div>
+  </section>
+
+  <!-- ================= CRATE SPOTLIGHT ================= -->
+  <section class="sec wrap" id="crates">
+    <div class="sec-head rv">
+      <div>
+        <span class="idx">04 — Crate keys</span>
+        <h2 class="h-lg">Every reward. Every odd. Up front.</h2>
+        <p>Click a crate to open its full reward pool before you spend anything. No mystery boxes, no hidden filler.</p>
+      </div>
+      <div class="side">
+        <a class="btn btn-ghost btn-sm" href="crates.html">All six crates <svg viewBox="0 0 24 24"><path d="M5 12h13M12.5 5.5L19 12l-6.5 6.5"/></svg></a>
+      </div>
+    </div>
+
+    <div class="grid3" id="crateSpotlight"></div>
+  </section>
+
+  <!-- ================= BOOSTER FEATURE ================= -->
+  <section class="sec wrap">
+    <div class="feature rv">
+      <div class="feature-body">
+        <span class="kicker cy">Launch offer · one server, double the shards</span>
+        <h2 class="h-lg">3 boosters for <span class="accent-grad">$1.</span></h2>
+        <p class="lede">
+          Every booster lights up the whole server at ×2 shards for a full hour.
+          Three of them, queued whenever you want. The AFK zone doubles too — and nobody's hour is ever wasted.
+        </p>
+        <div class="feature-price">
+          <span class="n">$1</span>
+          <span class="u">USD / 3-hour pack</span>
+          <s>$3.00</s>
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <button class="btn btn-primary" data-add='{"id":"booster-pack","name":"Shard Booster Pack","price":1,"was":3,"kind":"booster","sub":"3 × 1 hour · global ×2"}'>
+            Get the pack
+            <svg viewBox="0 0 24 24"><path d="M5 12h13M12.5 5.5L19 12l-6.5 6.5"/></svg>
+          </button>
+          <a class="btn btn-ghost" href="boosters.html">How boosting works</a>
+        </div>
+      </div>
+      <div class="feature-art">
+        <canvas data-art="flask" data-size="380" data-spec='{}'></canvas>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= LAND ================= -->
+  <section class="sec wrap" id="land">
+    <div class="sec-head rv">
+      <div>
+        <span class="idx">05 — Protected land</span>
+        <h2 class="h-lg">One block. A whole cube of your rules.</h2>
+        <p>Protection blocks are listed by other players — the price you see is the cheapest live listing. Place it, trust who you want, retrieve it later.</p>
+      </div>
+      <div class="side">
+        <a class="btn btn-ghost btn-sm" href="protection.html">All tiers <svg viewBox="0 0 24 24"><path d="M5 12h13M12.5 5.5L19 12l-6.5 6.5"/></svg></a>
+      </div>
+    </div>
+    <div class="land-grid" id="landGrid"></div>
+  </section>
+
+  <!-- ================= TRUST ================= -->
+  <section class="sec wrap">
+    <div class="sec-head rv">
+      <div>
+        <span class="idx">06 — Why it's safe</span>
+        <h2 class="h-lg">Boring where it counts.</h2>
+      </div>
+    </div>
+    <div class="trust rv">
+      <div>
+        <span class="ic"><svg viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8.5 10V7.5a3.5 3.5 0 017 0V10"/></svg></span>
+        <b>Card checkout</b>
+        <p>Handled by an established processor. MineX never sees your card number.</p>
+      </div>
+      <div>
+        <span class="ic"><svg viewBox="0 0 24 24"><path d="M12 3l7.5 3v6c0 4.6-3.2 7.7-7.5 9-4.3-1.3-7.5-4.4-7.5-9V6L12 3z"/><path d="M8.8 12l2.3 2.3 4.2-4.4"/></svg></span>
+        <b>Verified server-side</b>
+        <p>Every purchase is confirmed against the payment before anything is delivered.</p>
+      </div>
+      <div>
+        <span class="ic"><svg viewBox="0 0 24 24"><path d="M13 2.5L4.5 13.5H11l-1 8L19.5 10H13l1-7.5z"/></svg></span>
+        <b>Seconds, not tickets</b>
+        <p>Ranks and keys land on your player automatically. No waiting for staff.</p>
+      </div>
+      <div>
+        <span class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7.5v5l3.2 1.9"/></svg></span>
+        <b>No auto-renewals</b>
+        <p>Passes add 30 days per payment. Nothing charges you again without a click.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FAQ ================= -->
+  <section class="sec wrap">
+    <div class="sec-head rv">
+      <div>
+        <span class="idx">07 — Good to know</span>
+        <h2 class="h-lg">Before you buy.</h2>
+      </div>
+    </div>
+    <div class="faq rv">
+      <details open>
+        <summary><span class="q">01</span>How fast do I get what I bought?<span class="plus"></span></summary>
+        <div class="a">Ranks, crate keys, passes and boosters are delivered to the Minecraft name you enter at checkout, usually within seconds of the payment confirming. If the server is restarting, delivery completes as soon as it's back.</div>
+      </details>
+      <details>
+        <summary><span class="q">02</span>Do I need to buy every rank below the one I want?<span class="plus"></span></summary>
+        <div class="a">No. Buy the tier you want directly — it includes everything from every rank below it. Upgrading later is also fine; you keep the higher tier.</div>
+      </details>
+      <details>
+        <summary><span class="q">03</span>What exactly is in a crate?<span class="plus"></span></summary>
+        <div class="a">Every crate page lists its full reward pool with the real percentage chance for each item, before you buy. Nothing is weighted secretly and there is no "filler" tier that isn't shown.</div>
+      </details>
+      <details>
+        <summary><span class="q">04</span>How do protection blocks and player listings work?<span class="plus"></span></summary>
+        <div class="a">Protection blocks are owned by players, not the store. When you buy one from a listing, the seller receives 70% of the price and the block transfers to you. Place it to claim a full 3D cube around it, trust whoever you want, and retrieve it later with <code>/fo retrieve</code>.</div>
+      </details>
+      <details>
+        <summary><span class="q">05</span>What happens if I already own a rank?<span class="plus"></span></summary>
+        <div class="a">Contact us on Discord before purchasing a duplicate and we'll sort out an upgrade or a credit. Ranks don't stack, and buying the same one twice won't give you a second helping of perks.</div>
+      </details>
+      <details>
+        <summary><span class="q">06</span>Can I get a refund?<span class="plus"></span></summary>
+        <div class="a">Digital goods that have already been delivered generally can't be refunded, but if something failed to arrive or arrived wrong, open a ticket in Discord and we'll fix it or refund it.</div>
+      </details>
+    </div>
+  </section>
+
+</main>
+
+<div data-chrome-foot></div>
+
+<script src="assets/art.js"></script>
+<script src="assets/app.js"></script>
+<script>
+(function () {
+  MX.boot('store');
+
+  var C = MX.CATALOG;
+
+  /* ---------- ticker ---------- */
+  var purchases = [
+    ['Emperor Rank', 'x_Kael', 'rank', '#F1C34C'],
+    ['Mythic Crate ×3', 'Johanzen', 'crate', '#F0687E'],
+    ['Protection Block II', 'MillyOnSnuffy', 'land', '#4F9CF0'],
+    ['Legendary Crate', 'MarcoElFenix', 'crate', '#F1C34C'],
+    ['Emperor Rank', 'chrisp0901', 'rank', '#F1C34C'],
+    ['Shard Booster Pack', 'zellixo_', 'booster', '#57D9EF'],
+    ['King Rank', 'HIddan_kalled', 'rank', '#E2823C'],
+    ['Rare Crate ×5', 'NovaByte', 'crate', '#4F9CF0'],
+    ['Protection Block I', 'greywarden', 'land', '#7BA05B'],
+    ['MineX++ Pass', 'Sablewing', 'pass', '#A78BFA'],
+    ['Epic Crate ×2', 'rune_cast', 'crate', '#A78BFA'],
+    ['Squire Rank', 'newtboi', 'rank', '#9AA6BA']
+  ];
+  var minutes = [2, 6, 11, 17, 23, 31, 44, 58, 73, 91, 112, 140];
+  function tickHTML() {
+    return purchases.map(function (p, i) {
+      return '<span class="tick"><span class="sw" style="background:' + p[3] + '"></span>' +
+        '<span class="kind">' + p[2] + '</span>' +
+        '<b>' + p[1] + '</b> bought <b>' + p[0] + '</b>' +
+        '<span style="opacity:.55">' + minutes[i] + 'm ago</span></span>';
+    }).join('');
+  }
+  document.getElementById('ticker').innerHTML = tickHTML() + tickHTML();
+
+  /* ---------- best sellers ---------- */
+  var em = C.ranks[4];
+  var cards = [
+    {
+      badge: 'Most chosen', eyebrow: 'Rank V · permanent', name: 'Emperor Rank',
+      desc: 'Max limits, priority queue, the complete utility suite.',
+      perks: ['Max homes, vaults and claims', 'Everything Squire → King'],
+      price: 37.5, note: 'or 4 × $9.38 weekly', tint: '#F1C34C', kind: 'rank', rankId: 'emperor',
+      art: 'crest', spec: { rim: '#F1C34C', face: '#8D2440', face2: '#6A1A2F', inner: '#2A0E18', gem: '#FFE9A8', prongs: 5, tip: '#FFF2C4', wings: true },
+      sub: 'Permanent · all lower ranks included'
+    },
+    {
+      badge: null, eyebrow: 'Endgame key', name: 'Mythic Crate',
+      desc: 'Dragon Knight — six mythic pieces, most tradeable.',
+      perks: ['Dragon Knight piece <b>100%</b>', 'Skinned + tradeable <b>15%</b>'],
+      price: 34.99, note: 'per key', tint: '#F0687E', kind: 'crate', crateId: 'mythic',
+      art: 'crate', spec: C.crates[5].art,
+      sub: 'Crate key · opens at spawn'
+    },
+    {
+      badge: null, eyebrow: 'Rank IV · permanent', name: 'King Rank',
+      desc: 'Claim flight, a player warp, and fast recovery.',
+      perks: ['<code>/fly</code> inside your claims', '<code>/pwarp</code> + fast <code>/back</code>'],
+      price: 25, note: 'or 4 × $6.25 weekly', tint: '#E2823C', kind: 'rank', rankId: 'king',
+      art: 'crest', spec: { rim: '#F0A85C', face: '#A34A22', face2: '#7E3818', inner: '#3A1608', gem: '#FFD9A8', prongs: 3, tip: '#FFD9A8' },
+      sub: 'Permanent · all lower ranks included'
+    },
+    {
+      badge: 'Cheapest', eyebrow: 'Protection · Tier II', name: 'Protection Block II',
+      desc: '49³ blocks of your own rules, trust list included.',
+      perks: ['Per-player trust, containers', 'Cheapest live listing <b>$4.50</b>'],
+      price: 4.5, note: 'from players', tint: '#4F9CF0', kind: 'land', landId: 'p2',
+      art: 'land', spec: C.land[1].art,
+      sub: 'Player listing · seller gets 70%'
+    }
+  ];
+
+  document.getElementById('bestsellers').innerHTML = cards.map(function (c, i) {
+    var sp = MX.splitPrice(c.price);
+    return '<article class="prod rv" style="--tint:' + c.tint + '" data-delay="' + (i * 60) + '">' +
+      (c.badge ? '<span class="prod-badge">' + c.badge + '</span>' : '') +
+      '<span class="prod-tier">' + String(i + 1).padStart(2, '0') + '</span>' +
+      '<div class="prod-art"><canvas data-art="' + c.art + '" data-size="340" data-spec=\'' + JSON.stringify(c.spec) + '\'></canvas></div>' +
+      '<div class="prod-body">' +
+      '<div class="prod-eyeb">' + c.eyebrow + '</div>' +
+      '<h3>' + c.name + '</h3>' +
+      '<p class="desc">' + c.desc + '</p>' +
+      '<ul class="perks">' + c.perks.map(function (p) { return '<li>' + p + '</li>'; }).join('') + '</ul>' +
+      '<div class="prod-foot">' +
+      '<div class="price-row"><div class="price"><span class="cur">$</span><span class="num">' + sp.whole + '</span><span class="dec">.' + sp.dec + '</span></div>' +
+      '<div class="price-note">' + c.note + '</div></div>' +
+      '<div class="prod-actions"><button class="btn btn-primary" data-add=\'' + JSON.stringify({ id: c.kind + ':' + (c.rankId || c.crateId || c.landId), name: c.name, price: c.price, kind: c.kind, rankId: c.rankId, sub: c.sub }) + '\'>Add to basket</button></div>' +
+      '</div></div></article>';
+  }).join('');
+
+  /* ---------- rank ladder ---------- */
+  var rankSpecs = {
+    squire: { rim: '#B9C4D6', face: '#4E5B72', face2: '#3B4658', inner: '#1B2233', gem: '#BFE1F0', prongs: 1 },
+    knight: { rim: '#8FC0EE', face: '#2F5C8E', face2: '#244667', inner: '#132437', gem: '#8FE6FF', prongs: 2 },
+    lord: { rim: '#BBA6FF', face: '#5B3F96', face2: '#472F76', inner: '#221640', gem: '#D6C6FF', prongs: 3 },
+    king: { rim: '#F0A85C', face: '#A34A22', face2: '#7E3818', inner: '#3A1608', gem: '#FFD9A8', prongs: 3, tip: '#FFD9A8' },
+    emperor: { rim: '#F1C34C', face: '#8D2440', face2: '#6A1A2F', inner: '#2A0E18', gem: '#FFE9A8', prongs: 5, tip: '#FFF2C4', wings: true }
+  };
+  document.getElementById('ladder').innerHTML = C.ranks.map(function (r, i) {
+    return '<article class="rank rv' + (r.top ? ' top' : '') + '" style="--tint:' + r.tint + '" data-delay="' + (i * 50) + '">' +
+      '<span class="rank-roman">' + r.roman + '</span>' +
+      '<div class="rank-art"><canvas data-art="rank" data-size="300" data-spec=\'' + JSON.stringify({ id: r.id }) + '\'></canvas></div>' +
+      '<div class="rank-body">' +
+      '<h3>' + r.name + '</h3>' +
+      '<p class="tagline">' + r.tagline + '</p>' +
+      '<div class="marquee">' + r.marquee.slice(0, 3).map(function (m) { return '<span>' + m + '</span>'; }).join('') + '</div>' +
+      '<div class="p"><span class="cur">$</span><span class="n">' + (r.price % 1 === 0 ? String(r.price) : r.price.toFixed(2)) + '</span></div>' +
+      '<button class="buy" data-add=\'' + JSON.stringify({ id: 'rank:' + r.id, name: r.name + ' Rank', price: r.price, kind: 'rank', rankId: r.id, sub: 'Permanent · all lower ranks included' }) + '\'>Add to basket</button>' +
+      '</div></article>';
+  }).join('');
+
+  /* ---------- crate spotlight ---------- */
+  var picks = [C.crates[3], C.crates[4], C.crates[5]];
+  document.getElementById('crateSpotlight').innerHTML = picks.map(function (c, i) {
+    return '<article class="prod rv" style="--tint:' + c.tint + '" data-delay="' + (i * 60) + '">' +
+      (c.id === 'mythic' ? '<span class="prod-badge cy">Skins</span>' : '') +
+      '<span class="prod-tier">' + c.tier + '</span>' +
+      '<div class="prod-art"><canvas data-art="crate" data-size="340" data-spec=\'' + JSON.stringify(c.art) + '\'></canvas></div>' +
+      '<div class="prod-body">' +
+      '<div class="prod-eyeb">' + c.tier + ' key</div>' +
+      '<h3>' + c.name + '</h3>' +
+      '<p class="desc">' + c.blurb + '</p>' +
+      '<ul class="perks">' + c.odds.slice(0, 2).map(function (o) { return '<li>' + o[0] + ' <b>' + o[1] + '%</b></li>'; }).join('') + '</ul>' +
+      '<div class="prod-foot">' +
+      '<div class="price-row"><div class="price"><span class="cur">$</span><span class="num">' + MX.splitPrice(c.price).whole + '</span><span class="dec">.' + MX.splitPrice(c.price).dec + '</span></div>' +
+      '<div class="price-note">per key</div></div>' +
+      '<div class="prod-actions">' +
+      '<button class="btn btn-ghost btn-sm" data-rewards="' + c.id + '">Rewards</button>' +
+      '<button class="btn btn-primary" data-add=\'' + JSON.stringify({ id: 'crate:' + c.id, name: c.name, price: c.price, kind: 'crate', spec: c.art, sub: 'Crate key · opens at spawn' }) + '\'>Add</button>' +
+      '</div></div></div></article>';
+  }).join('');
+
+  /* ---------- land ---------- */
+  document.getElementById('landGrid').innerHTML = C.land.map(function (l, i) {
+    var sp = MX.splitPrice(l.price);
+    return '<article class="prod rv" style="--tint:' + l.tint + '" data-delay="' + (i * 55) + '">' +
+      '<span class="prod-tier">' + l.tier + '</span>' +
+      '<div class="prod-art"><canvas data-art="land" data-size="340" data-spec=\'' + JSON.stringify(l.art) + '\'></canvas></div>' +
+      '<div class="prod-body">' +
+      '<div class="prod-eyeb">' + l.tag + ' · ' + l.size + '³ blocks</div>' +
+      '<h3>' + l.name + '</h3>' +
+      '<p class="desc">' + l.blurb + '</p>' +
+      '<ul class="perks">' + l.perks.slice(0, 2).map(function (p) { return '<li>' + p + '</li>'; }).join('') + '</ul>' +
+      '<div class="prod-foot">' +
+      '<div class="price-row"><div class="price"><span class="cur">$</span><span class="num">' + sp.whole + '</span><span class="dec">.' + sp.dec + '</span></div>' +
+      '<div class="price-note">cheapest listing</div></div>' +
+      '<div class="prod-actions"><button class="btn btn-primary" data-add=\'' + JSON.stringify({ id: 'land:' + l.id, name: l.name, price: l.price, kind: 'land', spec: l.art, sub: 'Player listing · seller gets 70%' }) + '\'>Add to basket</button></div>' +
+      '</div></div></article>';
+  }).join('');
+
+  /* ---------- rewards modal ---------- */
+  var modal = document.createElement('div');
+  modal.className = 'modal';
+  modal.setAttribute('data-rewards-modal', '');
+  modal.innerHTML = '<div class="modal-card"><button class="modal-close" data-close-modal aria-label="Close">' +
+    '<svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>' +
+    '<div class="modal-grid"><div class="modal-art"><canvas data-art="crate" data-size="380"></canvas></div>' +
+    '<div class="modal-body"><span class="kicker" style="margin-bottom:12px" data-m-kick></span>' +
+    '<h3 class="h-md" style="margin-bottom:10px" data-m-title></h3>' +
+    '<p class="lede" style="font-size:13px;margin-bottom:18px" data-m-desc></p>' +
+    '<div class="pool open" style="margin-top:0"><div class="pool-head"><b>Full reward pool</b><span>verified odds</span></div>' +
+    '<div class="pool-list" data-m-pool></div></div>' +
+    '<button class="btn btn-primary btn-block" style="margin-top:18px" data-m-add>Add to basket</button>' +
+    '</div></div></div>';
+  document.body.appendChild(modal);
+  var modalScrim = document.createElement('div');
+  modalScrim.className = 'scrim';
+  modalScrim.setAttribute('data-modal-scrim', '');
+  document.body.insertBefore(modalScrim, modal);
+
+  var activeCrate = null;
+  function openRewards(id) {
+    var c = C.crates.filter(function (x) { return x.id === id; })[0];
+    if (!c) return;
+    activeCrate = c;
+    MX.el('[data-m-kick]', modal).textContent = c.tier + ' crate key';
+    MX.el('[data-m-title]', modal).textContent = c.name;
+    MX.el('[data-m-desc]', modal).textContent = c.blurb;
+    var cv = MX.el('.modal-art canvas', modal);
+    cv.removeAttribute('data-done');
+    cv.setAttribute('data-spec', JSON.stringify(c.art));
+    MX.mountArt(modal);
+    MX.el('[data-m-pool]', modal).innerHTML = c.odds.map(function (o) {
+      return '<div class="pool-row' + (o[2] > 0.25 ? ' rare' : '') + '">' +
+        '<span class="sw" style="background:' + (o[2] > 0.25 ? c.glow : c.tint) + '"></span>' +
+        '<span class="nm">' + o[0] + '</span>' +
+        '<span class="bar"><i style="width:' + Math.max(3, o[1]) + '%;background:' + (o[2] > 0.25 ? c.glow : c.tint) + '"></i></span>' +
+        '<span class="pct">' + o[1] + '%</span></div>';
+    }).join('');
+    MX.el('[data-m-add]', modal).setAttribute('data-add', JSON.stringify({
+      id: 'crate:' + c.id, name: c.name, price: c.price, kind: 'crate', spec: c.art, sub: 'Crate key · opens at spawn'
+    }));
+    modal.classList.add('on');
+    modalScrim.classList.add('on');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal() {
+    modal.classList.remove('on');
+    modalScrim.classList.remove('on');
+    if (!MX.el('[data-drawer]').classList.contains('on')) document.body.style.overflow = '';
+  }
+  document.addEventListener('click', function (e) {
+    var r = e.target.closest('[data-rewards]');
+    if (r) { openRewards(r.getAttribute('data-rewards')); return; }
+    if (e.target.closest('[data-close-modal]') || e.target.closest('[data-modal-scrim]')) closeModal();
+  });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeModal(); });
+
+  MX.mountArt();
+  MX.initReveal();
+  MX.initParallax();
+})();
+</script>
+</body>
+</html>

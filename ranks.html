@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ranks — MineX Store</title>
+<meta name="description" content="Permanent MineX ranks from Squire to Emperor. Every rank includes everything below it. Buy the tier you want — no upgrade ladder required.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div data-chrome-top></div>
+
+<main id="page">
+
+  <section class="page-head" style="--tint:#F1C34C">
+    <div class="inner">
+      <a class="back" href="index.html"><svg viewBox="0 0 24 24"><path d="M19 12H6M12.5 5.5L6 12l6.5 6.5"/></svg>Back to store</a>
+      <span class="kicker" style="margin-bottom:16px">Permanent · never expires</span>
+      <h1 class="h-xl" style="font-size:clamp(38px,4.6vw,62px)">Ranks</h1>
+      <p class="lede" style="margin-top:14px">Five tiers, one ladder. Buy the rank you want — every tier already includes everything below it, so there is nothing to upgrade through. They never expire and never renew.</p>
+    </div>
+  </section>
+
+  <nav class="subnav">
+    <div class="subnav-in">
+      <a href="#ladder" class="on">The five ranks</a>
+      <a href="#compare">Full comparison</a>
+      <a href="#passes">30-day passes</a>
+      <a href="#faq">Questions</a>
+    </div>
+  </nav>
+
+  <section class="sec wrap" id="ladder" style="padding-top:52px">
+    <div class="ladder" id="ladderEl"></div>
+    <div class="ladder-foot">
+      <span>King and Emperor can split into 4 weekly payments.</span>
+      <span class="sep"></span>
+      <span>Delivery starts after server-side payment verification.</span>
+      <span class="sep"></span>
+      <span>Ranks are permanent and stack through upgrades.</span>
+    </div>
+  </section>
+
+  <section class="sec wrap" id="compare">
+    <div class="sec-head rv">
+      <div>
+        <span class="idx">Perk by perk</span>
+        <h2 class="h-lg">The whole ladder, side by side.</h2>
+        <p>Homes, vaults and kits are hard limits — what you see is what the server enforces. Everything in a column is included in every column to its right.</p>
+      </div>
+    </div>
+    <div class="compare rv" id="compareEl"></div>
+  </section>
+
+  <section class="sec wrap" id="passes">
+    <div class="sec-head rv">
+      <div>
+        <span class="idx">Optional · monthly</span>
+        <h2 class="h-lg">30-day passes.</h2>
+        <p>Passes are separate from ranks and stack on top of them. Each payment adds 30 days — nothing auto-renews, and nothing is charged without you clicking.</p>
+      </div>
+    </div>
+    <div class="grid2" id="passesEl"></div>
+  </section>
+
+  <section class="sec wrap" id="faq">
+    <div class="sec-head rv">
+      <div>
+        <span class="idx">Rank questions</span>
+        <h2 class="h-lg">The things people ask.</h2>
+      </div>
+    </div>
+    <div class="faq rv">
+      <details open>
+        <summary><span class="q">01</span>Do ranks expire?<span class="plus"></span></summary>
+        <div class="a">No. A rank is a one-time purchase that stays on your account permanently. There is no monthly fee, no renewal and no way to lose it by being inactive.</div>
+      </details>
+      <details>
+        <summary><span class="q">02</span>Do I have to buy every rank below the one I want?<span class="plus"></span></summary>
+        <div class="a">No. Buy the tier you want directly — it includes every perk from every rank below it. The ladder exists so you can see what you're getting, not to force upgrades.</div>
+      </details>
+      <details>
+        <summary><span class="q">03</span>How does the weekly split work for King and Emperor?<span class="plus"></span></summary>
+        <div class="a">King and Emperor can be split into four weekly payments of a quarter of the total price. The rank activates after the first payment and stays active — the remaining payments are a schedule, not a subscription.</div>
+      </details>
+      <details>
+        <summary><span class="q">04</span>Can I upgrade from King to Emperor later?<span class="plus"></span></summary>
+        <div class="a">Yes. Open a Discord ticket before buying twice and we'll arrange the difference. Buying the same rank a second time does not grant extra perks.</div>
+      </details>
+      <details>
+        <summary><span class="q">05</span>Do rank perks apply on Bedrock?<span class="plus"></span></summary>
+        <div class="a">Yes. Ranks are tied to your account across both Java and Bedrock. Chat prefixes, homes, vaults and kits all work on either edition.</div>
+      </details>
+      <details>
+        <summary><span class="q">06</span>What if a perk doesn't work after I buy?<span class="plus"></span></summary>
+        <div class="a">Rejoin the server once — perks are applied on login. If something is still missing after that, open a Discord ticket with your username and we'll fix it manually.</div>
+      </details>
+    </div>
+  </section>
+
+</main>
+
+<div data-chrome-foot></div>
+
+<script src="assets/art.js"></script>
+<script src="assets/app.js"></script>
+<script>
+(function () {
+  MX.boot('ranks');
+  var C = MX.CATALOG;
+
+  var specs = {
+    squire: { rim: '#B9C4D6', face: '#4E5B72', face2: '#3B4658', inner: '#1B2233', gem: '#BFE1F0', prongs: 1 },
+    knight: { rim: '#8FC0EE', face: '#2F5C8E', face2: '#244667', inner: '#132437', gem: '#8FE6FF', prongs: 2 },
+    lord: { rim: '#BBA6FF', face: '#5B3F96', face2: '#472F76', inner: '#221640', gem: '#D6C6FF', prongs: 3 },
+    king: { rim: '#F0A85C', face: '#A34A22', face2: '#7E3818', inner: '#3A1608', gem: '#FFD9A8', prongs: 3, tip: '#FFD9A8' },
+    emperor: { rim: '#F1C34C', face: '#8D2440', face2: '#6A1A2F', inner: '#2A0E18', gem: '#FFE9A8', prongs: 5, tip: '#FFF2C4' }
+  };
+
+  /* ---- ladder ---- */
+  document.getElementById('ladderEl').innerHTML = C.ranks.map(function (r, i) {
+    return '<article class="rank rv' + (r.top ? ' top' : '') + '" style="--tint:' + r.tint + '" data-delay="' + (i * 50) + '">' +
+      '<span class="rank-roman">' + r.roman + '</span>' +
+      '<div class="rank-art"><canvas data-art="rank" data-size="300" data-spec=\'' + JSON.stringify({ id: r.id }) + '\'></canvas></div>' +
+      '<div class="rank-body">' +
+      '<h3>' + r.name + '</h3>' +
+      '<p class="tagline">' + r.tagline + '</p>' +
+      '<div class="marquee">' + r.marquee.map(function (m) { return '<span>' + m + '</span>'; }).join('') + '</div>' +
+      '<div class="p"><span class="cur">$</span><span class="n">' + (r.price % 1 === 0 ? String(r.price) : r.price.toFixed(2)) + '</span></div>' +
+      '<button class="buy" data-add=\'' + JSON.stringify({ id: 'rank:' + r.id, name: r.name + ' Rank', price: r.price, kind: 'rank', rankId: r.id, sub: 'Permanent · all lower ranks included' }) + '\'>Add to basket</button>' +
+      '</div></article>';
+  }).join('');
+
+  /* ---- comparison table ---- */
+  var groups = [
+    ['Limits', [
+      ['Homes', ['2', '4', '6', '10', '20']],
+      ['Vault rows', ['1', '2', '3', '5', '10']],
+      ['Land claims', ['1', '2', '3', '5', '8']],
+      ['/pwarp slots', ['—', '—', '1', '2', '5']]
+    ]],
+    ['Utility', [
+      ['/kit access', ['<span class="yes">✓</span>', '<span class="yes">✓</span>', '<span class="yes">✓</span>', '<span class="yes">✓</span>', '<span class="yes">✓</span>']],
+      ['/ec anywhere', ['<span class="no">—</span>', '<span class="yes">✓</span>', '<span class="yes">✓</span>', '<span class="yes">✓</span>', '<span class="yes">✓</span>']],
+      ['Coloured /nick', ['<span class="no">—</span>', '<span class="no">—</span>', '<span class="yes">✓</span>', '<span class="yes">✓</span>', '<span class="yes">✓</span>']],
+      ['Private voice', ['<span class="no">—</span>', '<span class="no">—</span>', '<span class="yes">✓</span>', '<span class="yes">✓</span>', '<span class="yes">✓</span>']],
+      ['/fly in claims', ['<span class="no">—</span>', '<span class="no">—</span>', '<span class="no">—</span>', '<span class="yes">✓</span>', '<span class="yes">✓</span>']],
+      ['Fast /back', ['<span class="no">—</span>', '<span class="no">—</span>', '<span class="no">—</span>', '<span class="yes">✓</span>', '<span class="yes">✓</span>']],
+      ['Priority queue', ['<span class="no">—</span>', '<span class="no">—</span>', '<span class="no">—</span>', '<span class="no">—</span>', '<span class="yes">✓</span>']]
+    ]],
+    ['Cosmetics', [
+      ['Chat prefix', ['<span class="yes">✓</span>', '<span class="yes">✓</span>', '<span class="yes">✓</span>', '<span class="yes">✓</span>', '<span class="yes">✓</span>']],
+      ['Join message', ['<span class="no">—</span>', '<span class="no">—</span>', '<span class="yes">✓</span>', '<span class="yes">✓</span>', '<span class="yes">✓</span>']],
+      ['Particle trail', ['<span class="no">—</span>', '<span class="no">—</span>', '<span class="no">—</span>', '<span class="yes">✓</span>', '<span class="yes">✓</span>']],
+      ['Custom tag colour', ['<span class="no">—</span>', '<span class="no">—</span>', '<span class="no">—</span>', '<span class="no">—</span>', '<span class="yes">✓</span>']]
+    ]]
+  ];
+
+  var thead = '<thead><tr><th style="min-width:150px">Perk</th>' + C.ranks.map(function (r) {
+    return '<th><span class="rk-name" style="color:' + r.tint + '">' + r.name + '</span><span class="rk-price">$' + (r.price % 1 === 0 ? r.price : r.price.toFixed(2)) + '</span></th>';
+  }).join('') + '</tr></thead>';
+
+  var tbody = groups.map(function (g) {
+    return '<tr class="grp"><td colspan="6">' + g[0] + '</td></tr>' +
+      g[1].map(function (row) {
+        return '<tr><td>' + row[0] + '</td>' + row[1].map(function (v) {
+          return '<td class="v">' + v + '</td>';
+        }).join('') + '</tr>';
+      }).join('');
+  }).join('');
+
+  var tfoot = '<tfoot><tr><td></td>' + C.ranks.map(function (r) {
+    return '<td><button class="btn btn-primary btn-sm" data-add=\'' + JSON.stringify({ id: 'rank:' + r.id, name: r.name + ' Rank', price: r.price, kind: 'rank', rankId: r.id, sub: 'Permanent · all lower ranks included' }) + '\'>Buy</button></td>';
+  }).join('') + '</tr></tfoot>';
+
+  document.getElementById('compareEl').innerHTML = '<table>' + thead + '<tbody>' + tbody + '</tbody>' + tfoot + '</table>';
+
+  /* ---- passes ---- */
+  document.getElementById('passesEl').innerHTML = C.passes.map(function (p, i) {
+    var sp = MX.splitPrice(p.price);
+    return '<article class="prod rv" style="--tint:' + p.tint + ';flex-direction:row" data-delay="' + (i * 60) + '">' +
+      '<div class="prod-art" style="width:220px;height:auto;min-height:200px;border-bottom:0;border-right:1px solid var(--line);flex:none">' +
+      '<canvas data-art="ticket" data-size="300" data-spec=\'' + JSON.stringify({ a: p.tint === '#57D9EF' ? '#57D9EF' : '#A78BFA', c: '#FFFFFF' }) + '\'></canvas></div>' +
+      '<div class="prod-body">' +
+      '<div class="prod-eyeb">' + p.days + ' days · no auto-renew</div>' +
+      '<h3>' + p.name + '</h3>' +
+      '<p class="desc">' + p.blurb + '</p>' +
+      '<ul class="perks">' + p.perks.map(function (x) { return '<li>' + x + '</li>'; }).join('') + '</ul>' +
+      '<div class="prod-foot"><div class="price-row">' +
+      '<div class="price"><span class="cur">$</span><span class="num">' + sp.whole + '</span><span class="dec">.' + sp.dec + '</span></div>' +
+      '<div class="price-note">per 30 days</div></div>' +
+      '<div class="prod-actions"><button class="btn btn-primary" data-add=\'' + JSON.stringify({ id: 'pass:' + p.id, name: p.name, price: p.price, kind: 'pass', tint: p.tint, sub: '30 days · one-time payment' }) + '\'>Add to basket</button></div>' +
+      '</div></div></article>';
+  }).join('');
+
+  // subnav active state
+  var secs = ['ladder', 'compare', 'passes', 'faq'];
+  window.addEventListener('scroll', function () {
+    var y = window.scrollY + 140, cur = 'ladder';
+    secs.forEach(function (id) {
+      var el = document.getElementById(id);
+      if (el && el.offsetTop <= y) cur = id;
+    });
+    MX.els('.subnav a').forEach(function (a) {
+      a.classList.toggle('on', a.getAttribute('href') === '#' + cur);
+    });
+  }, { passive: true });
+
+  MX.mountArt();
+  MX.initReveal();
+})();
+</script>
+</body>
+</html>
